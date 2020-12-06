@@ -115,48 +115,39 @@ console.clear();
     renderWeeks();
   }
 
-  document.getElementById('prev').addEventListener('click', () => {
-    month--;
-    if (month < 0) {
-      year--;
-      month = 11;
-    }
-
-    // createCalendar();
-    window.addEventListener("DOMContentLoaded", function () {
-      // DOMの準備が出来たら実行
-      createCalendar();
-    });
-  });
-
-  document.getElementById('next').addEventListener('click', () => {
-    month++;
-    if (month > 11) {
-      year++;
-      month = 0;
-    }
-
-    // createCalendar();
-    window.addEventListener("DOMContentLoaded", function () {
-      // DOMの準備が出来たら実行
-      createCalendar();
-    })
-  });
-
-  document.getElementById('today').addEventListener('click', () => {
-    year = today.getFullYear();
-    month = today.getMonth();
-
-    // createCalendar();
-    window.addEventListener("DOMContentLoaded", function () {
-      // DOMの準備が出来たら実行
-      createCalendar();
-    })
-  });
-
-  // createCalendar();
   window.addEventListener("DOMContentLoaded", function () {
-    // DOMの準備が出来たら実行
+    document.getElementById('prev').addEventListener('click', () => {
+      month--;
+      if (month < 0) {
+        year--;
+        month = 11;
+      }
+    createCalendar();
+
+  })
+
+  });
+
+  window.addEventListener("DOMContentLoaded", function () {
+    document.getElementById('next').addEventListener('click', () => {
+      month++;
+      if (month > 11) {
+        year++;
+        month = 0;
+      }
     createCalendar();
   })
+
+  });
+
+  
+  window.addEventListener("DOMContentLoaded", function () {
+    document.getElementById('today').addEventListener('click', () => {
+      year = today.getFullYear();
+      month = today.getMonth();
+      createCalendar();
+  })
+
+  });
+
 }
