@@ -105,3 +105,8 @@ footer {
   background-color: yellow;
   line-height: 50px;
 }
+
+.event {
+  height: 100px;
+  width: 100px;
+}

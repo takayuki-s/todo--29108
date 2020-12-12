@@ -13,12 +13,12 @@
 ActiveRecord::Schema.define(version: 2020_12_06_004717) do
 
   create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "title", null: false
+    t.string "title"
     t.text "detail"
-    t.date "event_date", null: false
+    t.date "event_date"
     t.datetime "start_date"
     t.datetime "end_date"
-    t.integer "category_id", null: false
+    t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -91,6 +91,13 @@ console.clear();
       week.forEach(date => {
         const td = document.createElement('td');
 
+        console.log(date.date, month + 1, year);  // 出力してみる
+
+        if (`${year}-${month + 1}-${date.date}` === '2020-12-12') {
+          console.log('ok')
+        }
+
+
         td.textContent = date.date;
         if (date.isToday) {
           td.classList.add('today');
@@ -98,6 +105,14 @@ console.clear();
         if (date.isDisabled) {
           td.classList.add('disabled');
         }
+
+        td.setAttribute('id', 'event_box')
+        const title_box = document.createElement('div');
+        title_box.textContent = 'titlebox';
+
+        const div = document.querySelector('td');
+        td.appendChild(title_box);
+
 
         tr.appendChild(td);
       });
@@ -151,3 +166,4 @@ console.clear();
   });
 
 }
+

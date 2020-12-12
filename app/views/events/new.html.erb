@@ -1,0 +1,12 @@
+<%= form_with model: @event, local: true do |f| %>
+  予定名・Todo名<%= f.text_area :title, class:"events-text", id:"event-name", placeholder:"イベント名をここに書いてください（20文字まで）", maxlength:"20" %>
+  詳細<%= f.text_area :detail, class:"events-text", id:"event-info", placeholder:"詳細をここに書いてください（1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+  予定orTodo<%= f.collection_select(:category_id, Category.all, :id, :name, {include_blank: "---"}, {class:"select-box", id:"item-category"}) %>
+  予定日<%= f.date_select :event_date, {}, class: 'form-control' %>
+  開始日<%= f.datetime_select :start_date, {}, class: 'form-control' %>
+  終了日<%= f.datetime_select :end_date, {}, class: 'form-control' %>
+
+  <%= f.submit "入力完了" ,class:"sell-btn" %>
+
+
+<% end %>
