@@ -73,6 +73,7 @@ td {
 
 td {
   vertical-align: top;
+
 }
 
 tbody td:first-child {
@@ -109,4 +110,12 @@ footer {
 .event {
   height: 100px;
   width: 100px;
+}
+
+#event_box {
+  width: 100px;
+}
+
+#title_box {
+  font-size: 15px;
 }

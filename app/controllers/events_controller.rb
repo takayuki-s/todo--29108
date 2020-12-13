@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   def index
     @events = Event.all
-    gon.events = @events
+    gon.event = @events
   end
 
   def new
@@ -12,6 +12,10 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.save
     redirect_to root_path
+  end
+
+  def show
+    @event = Event.find(params[:id])
   end
 
   private

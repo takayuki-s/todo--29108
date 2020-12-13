@@ -1,4 +1,10 @@
 <%= render "shared/header" %>
+<% @events.each do |event|%>
+  <%# <div> %>
+    <%= event.title %>
+  <%# </div> %>
+  <%= event.event_date %>
+<% end %>
 <div class="todo-countdown">
   カウントダウン表示
 </div>
