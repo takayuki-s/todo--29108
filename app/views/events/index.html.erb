@@ -1,10 +1,4 @@
 <%= render "shared/header" %>
-<% @events.each do |event|%>
-  <%# <div> %>
-    <%= event.title %>
-  <%# </div> %>
-  <%= event.event_date %>
-<% end %>
 <div class="todo-countdown">
   カウントダウン表示
 </div>
@@ -36,4 +30,10 @@
 <footer>
   フッター部分
 </footer>
+<div class='purchase-btn'>
+  <span class='purchase-btn-text'>イベント<br>作成</span>
+  <a href="events/new">
+    <%= image_tag 'pencil.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+  </a>
+</div>
 

@@ -1,12 +1,12 @@
 'use strict';
 
 console.clear();
-console.log(gon.event)
-console.log(gon.event[0].event_date)
-for (let i = 0; i < gon.event.length; i++) {
-  console.log(gon.event[i].title)
-  console.log(`${gon.event[i].event_date}`)
-}
+// console.log(gon.event)
+// console.log(gon.event[0].event_date)
+// for (let i = 0; i < gon.event.length; i++) {
+//   console.log(gon.event[i].title)
+//   console.log(`${gon.event[i].event_date}`)
+// }
 
 {
   const today = new Date();
@@ -24,6 +24,7 @@ for (let i = 0; i < gon.event.length; i++) {
       // 28, 29, 30
       dates.unshift({
         date: d - i,
+        month: (month + 1) % 12,
         isToday: false,
         isDisabled: true,
       });
@@ -39,6 +40,7 @@ for (let i = 0; i < gon.event.length; i++) {
     for (let i = 1; i <= lastDate; i++) {
       dates.push({
         date: i,
+        // month: (month + 1) % 12,
         isToday: false,
         isDisabled: false,
       });
@@ -58,6 +60,7 @@ for (let i = 0; i < gon.event.length; i++) {
     for (let i = 1; i < 7 - lastDay; i++) {
       dates.push({
         date: i,
+        // month: (month + 1) % 12,
         isToday: false,
         isDisabled: true,
       });
@@ -111,16 +114,46 @@ for (let i = 0; i < gon.event.length; i++) {
         
         const get_disabled = document.getElementsByClassName('disabled')
         
-        // console.log(date.date, month + 1, year);  // 出力してみる
         
+        // console.log(year, month + 1, date.date);  // 出力してみる
         
         for (let i = 0; i < gon.event.length; i++) {
-          if (`${gon.event[i].event_date}` === `${year}-${month + 1}-0${date.date}` || `${gon.event[i].event_date}` === `${year}-${month + 1}-${date.date}`) {
+          if (td.className === 'disabled') {
+            month += 1;
+            month % 12;
+            if (gon.event[i].event_date === `${year}-${month + 1}-0${date.date}` || `${gon.event[i].event_date}` === `${year}-0${month + 1}-${date.date}` || `${gon.event[i].event_date}` === `${year}-${month + 1}-${date.date}`) {
+              const title_box = document.createElement('div');
+              title_box.setAttribute('id', 'title_box');
+              const div = document.querySelector('td');
+              td.appendChild(title_box);
+              if (gon.event[i].event_time) {
+                const get_time = gon.event[i].event_time;
+                const change_time = `${get_time}`
+                const time = change_time.slice(11,16)
+    
+                title_box.textContent = `${time}~ ${gon.event[i].title}`
+              } else {
+                title_box.textContent = `${gon.event[i].title}`
+              }
+            }
+            month -= 1;
+          }
+          
+          
+          if (!date.isDisabled && gon.event[i].event_date === `${year}-${month + 1}-0${date.date}` || `${gon.event[i].event_date}` === `${year}-0${month + 1}-${date.date}` || `${gon.event[i].event_date}` === `${year}-${month + 1}-${date.date}`) {
             const title_box = document.createElement('div');
-            title_box.setAttribute('id', 'title_box')
+            title_box.setAttribute('id', 'title_box');
             const div = document.querySelector('td');
             td.appendChild(title_box);
-            title_box.textContent = gon.event[i].title
+            if (gon.event[i].event_time) {
+              const get_time = gon.event[i].event_time;
+              const change_time = `${get_time}`
+              const time = change_time.slice(11,16)
+  
+              title_box.textContent = `${time}~ ${gon.event[i].title}`
+            } else {
+              title_box.textContent = `${gon.event[i].title}`
+            }
           }
         }
         // if (`${year}-${month + 1}-${date.date}` === '2020-12-12') {

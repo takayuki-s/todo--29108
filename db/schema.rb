@@ -16,8 +16,7 @@ ActiveRecord::Schema.define(version: 2020_12_06_004717) do
     t.string "title"
     t.text "detail"
     t.date "event_date"
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.time "event_time"
     t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
