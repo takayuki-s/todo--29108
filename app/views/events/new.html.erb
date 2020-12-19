@@ -1,3 +1,5 @@
+<h1>入力フォーム</h1>
+
 <div class="Form">
   <%= form_with model: @event, local: true do |f| %>
   <div class="Form-Item">
@@ -11,11 +13,12 @@
     <span class="Form-Item-Label-Any">任意</span>
       イベント内容
       <div class="form-content">
-        <%= f.text_area :detail, class:"events-text", id:"event-info", placeholder:"内容（100字以内）" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :detail, class:"events-text", id:"event-info", placeholder:"内容（100字以内）" ,rows:"7" ,maxlength:"100" %>
       </div>
    </div>
   <div class="Form-Item">
     <span class="Form-Item-Label-Required">選択</span>
+    予定 or Todo
     <label class="plan"><%= f.radio_button :category_id, 1, checked: true%>予定</label>
     <label class="todo"><%= f.radio_button :category_id, 2 %>Todo</label>
   </div>
@@ -43,3 +46,7 @@
   </div>
   <% end %>
 </div>
+
+
+
+
