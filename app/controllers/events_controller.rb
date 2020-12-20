@@ -5,6 +5,8 @@ class EventsController < ApplicationController
   end
 
   def new
+    @events = Event.all
+    gon.event = @events
     @event = Event.new
   end
 

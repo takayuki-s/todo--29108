@@ -45,13 +45,39 @@
     <%= f.submit "入力完了" ,class:"Form-Btn" %>
   </div>
   <% end %>
-</div>
+  
+  <table class="mini-calendar">
+    <thead>
+      <tr>
+        <th id="prev">&laquo;</th>
+        <th id="title" colspan="5">2020/05</th>
+        <th id="next">&raquo;</th>
+      </tr>
+      <tr>
+        <th>Sun</th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td id="today" colspan="7">Today</td>
+      </tr>
+    </tfoot>
+  </table>
 
-<div class='purchase-btn'>
-  <span class='purchase-btn-text'>戻る</span>
-  <a href="/">
-    <%= image_tag 'calender.png' , size: '185x50' ,class: "purchase-btn-icon" %>
-  </a>
+  <div class='purchase-btn'>
+    <span class='purchase-btn-text'>戻る</span>
+    <a href= "/" >
+      <%= image_tag 'calendar.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+    </a>
+  </div>
 </div>
 
 

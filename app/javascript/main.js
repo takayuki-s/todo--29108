@@ -211,7 +211,7 @@ console.clear();
 
   });
 
-  setInterval(createCalendar, 1000);
+  // setInterval(createCalendar, 1000);
 
 }
 
