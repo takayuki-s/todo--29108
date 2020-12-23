@@ -5,15 +5,13 @@
       <li>〜副題〜</li>
     </ul>
     <ul class='login-content'>
-      <%# <% if user_signed_in? %>
-        <li class="user-box">ユーザー名</li>
-        <li class="user-box">ログアウト</li>
-        <%# <li><%= link_to current_user.nick_name, "#", class: "user-nickname" %></li>
-        <%# <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"%></li>
-      <%# <% else %>
-        <%# <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-        <%# <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
-      <%# <% end %>
+      <% if user_signed_in? %>
+        <li class="user-box"><%= link_to current_user.nick_name, "#", class: "user-nickname" %></li>
+        <li class="user-box"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"%></li> 
+      <% else %>
+        <li class="user-box"><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+        <li class="user-box"><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+      <% end %>      
     </ul>
   </div>
 </header>

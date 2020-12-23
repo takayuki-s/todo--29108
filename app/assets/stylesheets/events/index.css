@@ -5,6 +5,10 @@ body {
   text-align: center;
 }
 
+a {
+  text-decoration: none;
+}
+
 .top-content {
   width: 100vw;
   height: 100px;
@@ -41,11 +45,11 @@ body {
 .todo-countdown {
   background-color: lime;
   height: 100px;
+  width: 100vw;
 }
 
 body {
   font-family: 'Courier New', monospace;
-  font-size: 20px;
 }
 
 table {
@@ -73,6 +77,7 @@ td {
 
 td {
   vertical-align: top;
+  height: 130px;
 
 }
 
@@ -100,6 +105,11 @@ tfoot {
 #today {
   cursor: pointer;
   user-select: none;
+}
+
+#today {
+  height: 50px;
+  vertical-align: middle;
 }
 
 footer {
