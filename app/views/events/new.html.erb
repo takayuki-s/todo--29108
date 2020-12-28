@@ -1,7 +1,9 @@
 <h1>入力フォーム</h1>
 
+
 <div class="Form">
   <%= form_with model: @event, local: true do |f| %>
+  <%= render "shared/error_messages", model: f.object %>
   <div class="Form-Item">
       <span class="Form-Item-Label-Required">必須</span>
       イベント名
