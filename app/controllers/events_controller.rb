@@ -14,8 +14,12 @@ before_action :move_to_index, except: [:index, :show]
 
   def create
     @event = Event.new(event_params)
-    @event.save
-    redirect_to root_path
+    if @event.valid?
+      @event.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def show
@@ -25,7 +29,7 @@ before_action :move_to_index, except: [:index, :show]
   private
 
   def event_params
-    params.require(:event).permit(:title, :detail, :event_date, :event_time, :category_id)
+    params.require(:event).permit(:title, :detail, :event_date, :event_time, :category_id).merge(user_id: current_user.id)
   end
 
   def move_to_index
