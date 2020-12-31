@@ -127,7 +127,7 @@ footer {
 }
 
 #title_box {
-  font-size: 12px;
+  font-size: 16px;
   background-color: pink;
   color: black;
 }
@@ -154,4 +154,16 @@ footer {
 
 .purchase-btn-icon {
   width: 60%;
+}
+
+.list-box {
+  display: flex;
+}
+
+.plan-list {
+  width: 50vw;
+}
+
+.todo-list {
+  width: 50vw;
 }

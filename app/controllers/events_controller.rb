@@ -2,8 +2,12 @@ class EventsController < ApplicationController
 before_action :move_to_index, except: [:index, :show]
 
   def index
-    @events = Event.all
-    gon.event = @events
+    if user_signed_in?
+      @events = Event.where(user_id: current_user.id)
+    else
+      @events = Event.where(user_id: 1)
+    end
+      gon.event = @events
   end
 
   def new
