@@ -77,7 +77,7 @@ td {
 
 td {
   vertical-align: top;
-  height: 130px;
+  height: 100px;
 
 }
 
@@ -161,9 +161,44 @@ footer {
 }
 
 .plan-list {
+  margin: 10px;
   width: 50vw;
 }
 
+.plan-list h1 {
+  background: pink;
+}
+
 .todo-list {
+  margin: 10px;
   width: 50vw;
+}
+
+.list-box h1 {
+  font-size: 30px;
+  padding: 20px;
+}
+
+.todo-list h1 {
+  background: skyblue;
+}
+
+
+.plans {
+  text-align: left;
+}
+
+.a-plan {
+    padding: 15px;
+    border: 2px solid pink		;
+  }
+
+
+.todos {
+  text-align: left;
+}
+
+.a-todo {
+  padding: 15px;
+  border: 2px solid skyblue		;
 }

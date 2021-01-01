@@ -27,15 +27,39 @@
     </tr>
   </tfoot>
 </table>
-<footer>
-  <div class="list-box">
-    <div class="plan-list">
-      <h1>予定一覧</h1>
-    </div>
-    <div class="todo-list">
-      <h1>todo一覧</h1>
-    </div>
+
+<% d = Date.today%>
+
+<div class="list-box">
+  <div class="plan-list">
+    <h1>予定一覧</h1>
+    <ul class="plans">
+      <% @events.each do |event| %>
+        <% if event.category_id == 1 && d <= event.event_date %>
+          <li class="a-plan">
+            <%= event.event_date %>
+            <%= event.title %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
   </div>
+  <div class="todo-list">
+    <h1>todo一覧</h1>
+    <ul class="todos">
+      <% @events.each do |event| %>
+        <% if event.category_id == 2 && d <= event.event_date %>
+          <li class="a-todo">
+            <%= event.event_date %>
+            <%= event.title %>
+          </li>
+        <% end %>
+      <% end %>
+  </div>
+</div>
+
+<footer>
+  フッター部分
 </footer>
 <div class='purchase-btn'>
   <span class='purchase-btn-text'>イベント<br>作成</span>
