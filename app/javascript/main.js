@@ -118,12 +118,15 @@ console.clear();
               title_box.setAttribute('id', 'title_box');
               const div = document.querySelector('td');
               td.appendChild(title_box);
+              if (gon.event.category_id === 2) {
+                title_box.setAttribute("style", "background-color:skyblue;");
+              }
               if (gon.event[i].event_time) {
                 const get_time = gon.event[i].event_time;
                 const change_time = `${get_time}`
                 const time = change_time.slice(11,16)
-    
-                title_box.textContent = `${time}~ ${gon.event[i].title}`
+                
+                title_box.textContent = `${time} ${gon.event[i].title}`
               } else {
                 title_box.textContent = `${gon.event[i].title}`
               }
@@ -137,30 +140,36 @@ console.clear();
               title_box.setAttribute('id', 'title_box');
               const div = document.querySelector('td');
               td.appendChild(title_box);
+              if (gon.event[i].category_id === 2) {
+                title_box.setAttribute("style", "background-color:skyblue;");
+              }
               if (gon.event[i].event_time) {
                 const get_time = gon.event[i].event_time;
                 const change_time = `${get_time}`
                 const time = change_time.slice(11,16)
-    
-                title_box.textContent = `${time}~ ${gon.event[i].title}`
+                
+                title_box.textContent = `${time} ${gon.event[i].title}`
               } else {
                 title_box.textContent = `${gon.event[i].title}`
               }
             }
           }
-
+          
           
           if (!date.isDisabled && gon.event[i].event_date === `${year}-${month + 1}-0${date.date}` || !date.isDisabled && `${gon.event[i].event_date}` === `${year}-0${month + 1}-${date.date}` || !date.isDisabled && `${gon.event[i].event_date}` === `${year}-${month + 1}-${date.date}` || !date.isDisabled && `${gon.event[i].event_date}` === `${year}-0${month + 1}-0${date.date}`) {
             const title_box = document.createElement('div');
             title_box.setAttribute('id', 'title_box');
             const div = document.querySelector('td');
             td.appendChild(title_box);
+            if (gon.event[i].category_id === 2) {
+              title_box.setAttribute("style", "background-color:skyblue;");
+            }
             if (gon.event[i].event_time) {
               const get_time = gon.event[i].event_time;
               const change_time = `${get_time}`
               const time = change_time.slice(11,16)
   
-              title_box.textContent = `${time}~ ${gon.event[i].title}`
+              title_box.textContent = `${time} ${gon.event[i].title}`
             } else {
               title_box.textContent = `${gon.event[i].title}`
             }
