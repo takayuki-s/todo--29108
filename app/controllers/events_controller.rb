@@ -1,18 +1,12 @@
 class EventsController < ApplicationController
+before_action :gon_set, only: [:index, :new, :edit]
 before_action :move_to_index, except: [:index, :show]
+before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
-    if user_signed_in?
-      @events = Event.where(user_id: current_user.id)
-    else
-      @events = Event.where(user_id: 1)
-    end
-      gon.event = @events
   end
 
   def new
-    @events = Event.all
-    gon.event = @events
     @event = Event.new
   end
 
@@ -30,6 +24,25 @@ before_action :move_to_index, except: [:index, :show]
     @event = Event.find(params[:id])
   end
 
+  def edit
+  end
+
+  def update
+    if @event.update(event_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    if @event.destroy
+      redirect_to root_path
+    end
+  end
+
   private
 
   def event_params
@@ -40,6 +53,17 @@ before_action :move_to_index, except: [:index, :show]
     redirect_to new_user_session_path unless user_signed_in?
   end
 
+  def set_event
+    @event = Event.find(params[:id])
+  end
 
+  def gon_set
+    if user_signed_in?
+      @events = Event.where(user_id: current_user.id)
+    else
+      @events = Event.where(user_id: 1)
+    end
+      gon.event = @events
+  end
 
 end

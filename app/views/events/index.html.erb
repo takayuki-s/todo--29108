@@ -37,8 +37,25 @@
       <% @events.each do |event| %>
         <% if event.category_id == 1 && d <= event.event_date %>
           <li class="a-plan">
-            <%= event.event_date %>
-            <%= event.title %>
+            <div class="date-title-zone">
+              <div class="date-zone">
+                <%= event.event_date %>
+              </div>
+              <div class="title-zone">
+                <%= event.title %>
+              </div>
+            </div>
+            <div class="show-edit-delete-zone">
+              <div class="show-zone">
+                詳細
+              </div>
+              <div class="edit-zone">
+                <%= link_to '変更', edit_event_path(event.id), method: :get %>
+              </div>
+              <div class="delete-zone">
+                <%= link_to '削除', event_path(event.id), method: :delete %>
+              </div>
+            </div>
           </li>
         <% end %>
       <% end %>
@@ -50,8 +67,25 @@
       <% @events.each do |event| %>
         <% if event.category_id == 2 && d <= event.event_date %>
           <li class="a-todo">
-            <%= event.event_date %>
-            <%= event.title %>
+            <div class="date-title-zone">
+              <div class="date-zone">
+                <%= event.event_date %>
+              </div>
+              <div class="title-zone">
+                <%= event.title %>
+              </div>
+            </div>
+            <div class="show-edit-delete-zone">
+              <div class="show-zone">
+                詳細
+              </div>
+              <div class="edit-zone">
+                <%= link_to '変更', edit_event_path(event.id), method: :get %>
+              </div>
+              <div class="delete-zone">
+                <%= link_to '削除', event_path(event.id), method: :delete %>
+              </div>
+            </div>
           </li>
         <% end %>
       <% end %>

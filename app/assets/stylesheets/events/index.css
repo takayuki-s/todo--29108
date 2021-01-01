@@ -115,6 +115,7 @@ tfoot {
 footer {
   background-color: yellow;
   line-height: 50px;
+  height: 300px;
 }
 
 .event {
@@ -190,7 +191,10 @@ footer {
 
 .a-plan {
     padding: 15px;
-    border: 2px solid pink		;
+    border: 2px solid pink;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
 
@@ -200,5 +204,46 @@ footer {
 
 .a-todo {
   padding: 15px;
-  border: 2px solid skyblue		;
+  border: 2px solid skyblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.date-title-zone {
+  display: flex;
+  align-items: center;
+}
+
+.date-zone {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.title-zone {
+  width: 18vw;
+}
+
+.show-edit-delete-zone {
+  font-size: 18px;
+  margin-left: 10px;
+  display: flex;
+}
+
+.show-zone {
+  margin: 0 4px;
+  border: 1px solid gray;
+  background: lightgray;
+
+}
+.edit-zone {
+  margin: 0 4px;
+  border: 1px solid gray;
+  background: lightgray;
+}
+.delete-zone {
+  margin: 0 4px;
+  border: 1px solid gray;
+  background: lightgray;
 }
