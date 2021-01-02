@@ -47,8 +47,8 @@
             </div>
             <div class="show-edit-delete-zone">
               <div class="show-zone">
-                <label for="label#{event.id}">詳細</label>
-                <input type="checkbox" id="label#{event.id}">
+                <label for="label<%= event.id %>">詳細</label>
+                <input type="checkbox" id="label<%= event.id %>">
                 <div class="show-hidden-zone-plan" style="z-index:2" >
                   <%= event.title %><br>
                   日付：<%= event.event_date %><br>
@@ -95,7 +95,9 @@
             </div>
             <div class="show-edit-delete-zone">
               <div class="show-zone">
-                <div class="show-hidden-zone-todo">
+                <label for="label<%= event.id %>">詳細</label>
+                <input type="checkbox" id="label<%= event.id %>">
+                <div class="show-hidden-zone-todo" style="z-index:2" >
                   <%= event.title %><br>
                   日付：<%= event.event_date %><br>
                   <% if event.event_time %>
@@ -112,7 +114,6 @@
                   <% end %>
                   ※再度クリックすると閉じます
                 </div>
-                詳細
               </div>
               <div class="edit-zone">
                 <%= link_to '変更', edit_event_path(event.id), method: :get %>
