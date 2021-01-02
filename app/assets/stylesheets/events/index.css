@@ -235,8 +235,30 @@ footer {
   margin: 0 4px;
   border: 1px solid gray;
   background: lightgray;
+  position: relative;
+}
+
+.show-hidden-zone-plan {
+  width: 40vw;
+  position: absolute;
+  border: 1px solid gray;
+  background: pink;
+  top: 30px;
+  left: 10px;
+  display: none;
+  transition: 0.8s;
+}
+.show-hidden-zone-todo {
+  width: 40vw;
+  position: absolute;
+  border: 1px solid gray;
+  background: skyblue;
+  top: 30px;
+  right: 10px;
+  display: none;
 
 }
+
 .edit-zone {
   margin: 0 4px;
   border: 1px solid gray;
@@ -246,4 +268,12 @@ footer {
   margin: 0 4px;
   border: 1px solid gray;
   background: lightgray;
+}
+
+.show-zone input {
+  display: none;
+}
+
+.show-zone input:checked ~ .show-hidden-zone-plan {
+  display: block;
 }

@@ -47,7 +47,25 @@
             </div>
             <div class="show-edit-delete-zone">
               <div class="show-zone">
-                詳細
+                <label for="label#{event.id}">詳細</label>
+                <input type="checkbox" id="label#{event.id}">
+                <div class="show-hidden-zone-plan" style="z-index:2" >
+                  <%= event.title %><br>
+                  日付：<%= event.event_date %><br>
+                  <% if event.event_time %>
+                    <% t = "#{event.event_time}" %>
+                    <% time = t.slice(11..15) %>
+                    時間：<%= time %><BR>
+                  <% else %>
+                    時間：未設定<br>
+                  <% end %>
+                  <% unless event.detail == "" %>
+                    内容：<%= event.detail %><br>
+                  <% else %>
+                    内容：未設定<br>
+                  <% end %>
+                  ※再度クリックすると閉じます
+                </div>
               </div>
               <div class="edit-zone">
                 <%= link_to '変更', edit_event_path(event.id), method: :get %>
@@ -77,6 +95,23 @@
             </div>
             <div class="show-edit-delete-zone">
               <div class="show-zone">
+                <div class="show-hidden-zone-todo">
+                  <%= event.title %><br>
+                  日付：<%= event.event_date %><br>
+                  <% if event.event_time %>
+                    <% t = "#{event.event_time}" %>
+                    <% time = t.slice(10..15) %>
+                    時間：<%= time %><BR>
+                  <% else %>
+                    時間：設定されていません<br>
+                  <% end %>
+                  <% unless event.detail == "" %>
+                    内容：<%= event.detail %><br>
+                  <% else %>
+                    内容：設定されていません<br>
+                  <% end %>
+                  ※再度クリックすると閉じます
+                </div>
                 詳細
               </div>
               <div class="edit-zone">
