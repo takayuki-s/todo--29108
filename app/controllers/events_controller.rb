@@ -2,6 +2,7 @@ class EventsController < ApplicationController
 before_action :gon_set, only: [:index, :new, :edit]
 before_action :move_to_index, except: [:index, :show]
 before_action :set_event, only: [:show, :edit, :update, :destroy]
+before_action :user_check, only: [:edit, :update, :destroy]
 
   def index
   end
@@ -55,6 +56,10 @@ before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def set_event
     @event = Event.find(params[:id])
+  end
+
+  def user_check
+    redirect_to root_path unless current_user.id == @event.user_id
   end
 
   def gon_set
