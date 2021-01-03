@@ -27,15 +27,109 @@
     </tr>
   </tfoot>
 </table>
-<footer>
-  <div class="list-box">
-    <div class="plan-list">
-      <h1>予定一覧</h1>
-    </div>
-    <div class="todo-list">
-      <h1>todo一覧</h1>
-    </div>
+
+<% d = Date.today%>
+
+<div class="list-box">
+  <div class="plan-list">
+    <h1>予定一覧</h1>
+    <ul class="plans">
+      <% @events.each do |event| %>
+        <% if event.category_id == 1 && d <= event.event_date %>
+          <li class="a-plan">
+            <div class="date-title-zone">
+              <div class="date-zone">
+                <%= event.event_date %>
+              </div>
+              <div class="title-zone">
+                <%= event.title %>
+              </div>
+            </div>
+            <div class="show-edit-delete-zone">
+              <div class="show-zone">
+                <label for="label<%= event.id %>">詳細</label>
+                <input type="checkbox" id="label<%= event.id %>">
+                <div class="show-hidden-zone-plan" style="z-index:2" >
+                  <%= event.title %><br>
+                  日付：<%= event.event_date %><br>
+                  <% if event.event_time %>
+                    <% t = "#{event.event_time}" %>
+                    <% time = t.slice(11..15) %>
+                    時間：<%= time %><BR>
+                  <% else %>
+                    時間：未設定<br>
+                  <% end %>
+                  <% unless event.detail == "" %>
+                    内容：<%= event.detail %><br>
+                  <% else %>
+                    内容：未設定<br>
+                  <% end %>
+                  ※再度ボタンをクリックすると閉じます
+                </div>
+              </div>
+              <div class="edit-zone">
+                <%= link_to '変更', edit_event_path(event.id), method: :get %>
+              </div>
+              <div class="delete-zone">
+                <%= link_to '削除', event_path(event.id), method: :delete %>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
   </div>
+  <div class="todo-list">
+    <h1>todo一覧</h1>
+    <ul class="todos">
+      <% @events.each do |event| %>
+        <% if event.category_id == 2 && d <= event.event_date %>
+          <li class="a-todo">
+            <div class="date-title-zone">
+              <div class="date-zone">
+                <%= event.event_date %>
+              </div>
+              <div class="title-zone">
+                <%= event.title %>
+              </div>
+            </div>
+            <div class="show-edit-delete-zone">
+              <div class="show-zone">
+                <label for="label<%= event.id %>">詳細</label>
+                <input type="checkbox" id="label<%= event.id %>">
+                <div class="show-hidden-zone-todo" style="z-index:2" >
+                  <%= event.title %><br>
+                  日付：<%= event.event_date %><br>
+                  <% if event.event_time %>
+                    <% t = "#{event.event_time}" %>
+                    <% time = t.slice(11..15) %>
+                    時間：<%= time %><BR>
+                  <% else %>
+                    時間：設定されていません<br>
+                  <% end %>
+                  <% unless event.detail == "" %>
+                    内容：<%= event.detail %><br>
+                  <% else %>
+                    内容：設定されていません<br>
+                  <% end %>
+                  ※再度ボタンをクリックすると閉じます
+                </div>
+              </div>
+              <div class="edit-zone">
+                <%= link_to '変更', edit_event_path(event.id), method: :get %>
+              </div>
+              <div class="delete-zone">
+                <%= link_to '削除', event_path(event.id), method: :delete %>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      <% end %>
+  </div>
+</div>
+
+<footer>
+  フッター部分
 </footer>
 <div class='purchase-btn'>
   <span class='purchase-btn-text'>イベント<br>作成</span>
