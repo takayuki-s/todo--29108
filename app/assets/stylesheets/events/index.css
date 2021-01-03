@@ -1,8 +1,8 @@
 body {
   box-sizing: border-box;
-  height: 800px;
   font-size: 20px;
   text-align: center;
+  background: lime;
 }
 
 a {
@@ -44,21 +44,32 @@ a {
 
 .todo-countdown-title {
   width: 100vw;
+  height: 50px;
+  padding: 10px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.todo-countdown-title  p {
+  font-size: 30px;
+}
+
+.countdown {
+  width: 100%;
+  overflow: scroll;
 }
 
 .todo-countdown {
-  background: lime;
+  width: 500%;
   height: 150px;
-  width: calc(100vw - 20px);
   padding: 10px;
   display: flex;
 }
 .countdown-zone-red, .countdown-zone-yellow, .countdown-zone-blue {
+  width: 200px;
   height: calc(100% - 20px);
-  width: 20%;
   margin-right: 10px;
   padding: 10px;
-  overflow: auto;
 }
 
 .countdown-zone-red {
@@ -73,12 +84,12 @@ a {
 
 .countdown-zone-title {
   font-size: 18px;
-  padding: 10px;
+  padding: 5px;
   background-color: white;
 }
 
 .countdown-zone-date {
-  padding: 10px;
+  padding: 5px;
 }
 
 body {
@@ -93,6 +104,7 @@ table {
   border-collapse: collapse;
   border: 2px solid #eee;
   text-align: center;
+  background: white;
 }
 
 thead,
@@ -228,6 +240,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: white;
   }
 
 
@@ -241,7 +254,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  background: white;
 }
 
 .date-title-zone {
