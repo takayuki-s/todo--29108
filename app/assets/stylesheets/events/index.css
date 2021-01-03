@@ -42,10 +42,43 @@ a {
   border: 2px solid white;
 }
 
-.todo-countdown {
-  background-color: lime;
-  height: 100px;
+.todo-countdown-title {
   width: 100vw;
+}
+
+.todo-countdown {
+  background: lime;
+  height: 150px;
+  width: calc(100vw - 20px);
+  padding: 10px;
+  display: flex;
+}
+.countdown-zone-red, .countdown-zone-yellow, .countdown-zone-blue {
+  height: calc(100% - 20px);
+  width: 20%;
+  margin-right: 10px;
+  padding: 10px;
+  overflow: auto;
+}
+
+.countdown-zone-red {
+  background: crimson;
+}
+.countdown-zone-yellow {
+  background: yellow;
+}
+.countdown-zone-blue {
+  background: aqua;
+}
+
+.countdown-zone-title {
+  font-size: 18px;
+  padding: 10px;
+  background-color: white;
+}
+
+.countdown-zone-date {
+  padding: 10px;
 }
 
 body {

@@ -1,7 +1,47 @@
 <%= render "shared/header" %>
-<div class="todo-countdown">
+<div class="todo-countdown-title">
   カウントダウン表示
 </div>
+
+<% d = Date.today%>
+<div class="todo-countdown">
+  <% @events.each do |event| %>
+    <% if event.category_id == 2 && d <= event.event_date %>
+      <% cut_day = "#{event.event_date - d}" %>
+      <% cut_day_num = cut_day.length - 2%>
+      <% last_day = cut_day.slice(0, cut_day_num).to_i %>
+      <% if last_day <= 3 %>
+        <div class="countdown-zone-red">
+          <div class="countdown-zone-date">
+            <%= "残り #{last_day} 日！"%>
+          </div>
+          <div class="countdown-zone-title">
+            <%= event.title %>
+          </div>
+        </div>
+      <% elsif last_day <= 7 %>
+        <div class="countdown-zone-yellow">
+          <div class="countdown-zone-date">
+            <%= "残り #{last_day} 日！"%>
+          </div>
+          <div class="countdown-zone-title">
+            <%= event.title %>
+          </div>
+        </div>
+      <% elsif last_day <= 14 %>
+        <div class="countdown-zone-blue">
+          <div class="countdown-zone-date">
+            <%= "残り #{last_day} 日！"%>
+          </div>
+          <div class="countdown-zone-title">
+            <%= event.title %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+
 <table>
   <thead>
     <tr>
@@ -28,7 +68,6 @@
   </tfoot>
 </table>
 
-<% d = Date.today%>
 
 <div class="list-box">
   <div class="plan-list">
