@@ -217,7 +217,7 @@ footer {
 }
 
 .date-zone {
-  font-size: 16px;
+  font-size: 14px;
   margin-right: 10px;
 }
 
@@ -226,7 +226,8 @@ footer {
 }
 
 .show-edit-delete-zone {
-  font-size: 18px;
+  font-size: 16px;
+  min-width: 20%;
   margin-left: 10px;
   display: flex;
 }
@@ -234,8 +235,12 @@ footer {
 .show-zone {
   margin: 0 4px;
   border: 1px solid gray;
-  background: lightgray;
   position: relative;
+  padding: 5px;
+}
+
+.show-zone:hover {
+  background: lightgray;
 }
 
 .show-hidden-zone-plan {
@@ -243,31 +248,9 @@ footer {
   position: absolute;
   border: 1px solid gray;
   background: pink;
-  top: 30px;
-  left: 10px;
+  top: 40px;
+  left: 0;
   display: none;
-}
-
-.show-hidden-zone-todo {
-  width: 40vw;
-  position: absolute;
-  border: 1px solid gray;
-  background: skyblue;
-  top: 30px;
-  right: 10px;
-  display: none;
-
-}
-
-.edit-zone {
-  margin: 0 4px;
-  border: 1px solid gray;
-  background: lightgray;
-}
-.delete-zone {
-  margin: 0 4px;
-  border: 1px solid gray;
-  background: lightgray;
 }
 
 .show-zone input {
@@ -280,4 +263,37 @@ footer {
 
 .show-zone input:checked ~ .show-hidden-zone-todo {
   display: block;
+}
+
+.show-hidden-zone-todo {
+  width: 40vw;
+  position: absolute;
+  border: 1px solid gray;
+  background: skyblue;
+  top: 40px;
+  right: 0;
+  display: none;
+}
+
+.edit-zone {
+  margin: 0 4px;
+  border: 1px solid gray;
+  padding: 5px;
+  overflow: hidden;
+}
+
+
+.edit-zone:hover {
+  background: lightgray;
+}
+
+.delete-zone {
+  margin: 0 4px;
+  border: 1px solid gray;
+  padding: 5px;
+  overflow: hidden;
+}
+
+.delete-zone:hover {
+  background: lightgray;
 }
