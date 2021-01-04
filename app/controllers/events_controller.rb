@@ -64,7 +64,7 @@ before_action :user_check, only: [:edit, :update, :destroy]
 
   def gon_set
     if user_signed_in?
-      @events = Event.where(user_id: current_user.id)
+      @events = Event.where(user_id: current_user.id).order(event_date: :asc)
     else
       @events = Event.where(user_id: 1)
     end
