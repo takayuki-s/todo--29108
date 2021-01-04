@@ -24,6 +24,7 @@ h1 {
   align-items: center;
   justify-content: left;
   margin-left: 2vw;
+  background-image: image-url('paper.png');
 }
 @media screen and (max-width: 480px) {
   .Form-Item {
@@ -180,22 +181,35 @@ h1 {
   margin-left: 10vw;
 }
 
-
+.plan {
+  margin-left: 5vw;
+  padding: 15px;
+  border: 2px solid white	;
+}
 
 
 .todo {
   margin-left: 5vw;
   padding: 15px;
-  border: 2px solid #CCFFFF	;
+  border: 2px solid white	;
+}
+
+.plan:hover, .todo:hover {
+  background: white;
 }
 
 .Form-Item:hover {
   background: #DDFFDD;
 }
 
+.mini-calendar-box {
+  display: flex;
+  justify-content: center;
+}
+
 .mini-calendar {
-  margin-top: 50px;
-  width: 60vw;
-  height: 60vh;
+  margin-top: 150px;
+  width: 80vw;
+  height: 80vh;
   border: 3px solid lightgray;
 }
