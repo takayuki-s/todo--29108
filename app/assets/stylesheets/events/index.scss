@@ -12,8 +12,8 @@ a {
 
 .top-content {
   color: white;
-  width: 100vw;
-  height: 100px;
+  width: calc(100vw - 15px);
+  height: 200px;
   display: flex;
   align-items: center;
   background-image: image-url('back2.png');
@@ -26,7 +26,7 @@ a {
 }
 
 .sub-title {
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .title-content {
@@ -50,11 +50,10 @@ a {
 
 .user-box {
   font-size: 25px;
-  background: opacity 0.5;
 }
 
 .user-nickname, .login, .logout, .sign-up {
-  padding: 7px;
+  padding: 10px;
   background-image: image-url('back3.png');
 }
 
@@ -148,7 +147,7 @@ td {
 
 td {
   vertical-align: top;
-  height: 100px;
+  height: 80px;
 
 }
 
@@ -183,11 +182,6 @@ tfoot {
   vertical-align: middle;
 }
 
-footer {
-  background-color: yellow;
-  line-height: 50px;
-  height: 300px;
-}
 
 .event {
   height: 100px;
@@ -230,7 +224,7 @@ footer {
 
 .list-box {
   display: flex;
-  margin: 40px 20px ;
+  margin: 50px 20px 50px ;
 }
 
 .plan-list {
@@ -260,13 +254,13 @@ footer {
 }
 
 .a-plan {
-    padding: 15px;
-    border: 2px solid pink;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-image: image-url('paper.png')
-  }
+  padding: 15px;
+  border: 2px solid pink;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: image-url('paper.png')
+}
 
 
 .todos {
@@ -376,3 +370,69 @@ footer {
 .delete-zone:hover {
   background: lightgray;
 }
+
+.help-box {
+  height: 100px;
+  margin: 50px 20px;
+}
+
+
+footer {
+  line-height: 50px;
+  height: 550px;
+  margin-bottom: 50px;
+}
+
+
+.explain-border {
+  height: 500px;
+  overflow: scroll;
+  border: 5px solid brown;
+  margin: 20px;
+}
+
+
+
+.app-explains {
+  padding: 30px;
+  background-image: image-url('back7.png');
+}
+
+.explain {
+  font-size: 20px;
+  margin: 0 20px 20px;
+  padding: 20px;
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+.explain-head {
+  text-decoration: underline;
+  color: black;
+  font-size: 30px;
+}
+
+.explain-title h1 {
+  font-size: 35px;
+  padding: 30px;
+  background-image: image-url('back7.png');
+  text-shadow:
+    1px 0 0 #FFDAB9,
+    0 1px 0 #FFDAB9,
+    -1px 0 0 #FFDAB9,
+    0 -1px 0 #FFDAB9;
+}
+
+.red {
+  background: crimson;
+}
+
+.yellow {
+  background: yellow;
+}
+
+.blue {
+  background: aqua;
+}
+
+

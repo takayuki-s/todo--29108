@@ -169,8 +169,44 @@
   </div>
 </div>
 
+<div class="help-box">
+</div>
+
 <footer>
-  フッター部分
+  <div class="about-app">
+    <div class="explain-border">
+      <div class="explain-title">
+        <h1>マイのスケについて ~About MyScheduleBook~</h1>
+      </div>
+      <ul class="app-explains">
+        <li class="explain">
+          <span class="explain-head">１．アプリ利用について</span><br>
+          このアプリの利用にはユーザー登録が必要です。<br>
+          <%= link_to 'こちら', new_user_registration_path %>から登録できます。登録済みの方は<%= link_to 'こちら', new_user_session_path %>からログインしてください。<br>
+          ※ページ上部にあるボタンからでも新規登録・ログインできます。
+        </li>
+        <li class="explain">
+          <span class="explain-head">２．イベント（予定やtodo）作成について</span><br>
+          右下の「イベント作成ボタン」から予定やtodoの登録を行ってください。<br>
+          登録されたイベント名や時間（設定時）がカレンダーに表示されます。<br>
+          また、カレンダー内に前月や次月の日付がある場合も表示されますが、<br>
+          年をまたぐ場合（12月〜1月）のみ表示されないのでご注意ください。
+        </li>
+        <li class="explain">
+          <span class="explain-head">3．イベント（予定やtodo）一覧表示について</span><br>
+          日付が本日以降のもの（当日含む）のみ、日付が近い順に表示されます。<br>
+          「詳細」ボタンを押すと、内容や時間の確認ができます。<br>
+          「編集」ボタンを押すと、編集ページに遷移します。<br>
+          「削除」ボタンを押すと、登録したイベントが削除されます。
+        </li>
+        <li class="explain">
+          <span class="explain-head">４．「You have to do it!」について</span><br>
+          「todo」を作成した場合、期限が近づくとtodoリストが表示されます。<br>
+          期限が近いものから表示され、残り日数によって背景が変化します。<br>
+          <span class="red">&nbsp;赤…残り３日以内&nbsp;</span> &emsp; <span class="yellow">&nbsp;黄…残り７日以内&nbsp;</span> &emsp; <span class="blue">&nbsp;青…残り１４日以内&nbsp;</span>
+        </li>
+      </ul>
+    </div>
 </footer>
 <div class='purchase-btn'>
   <span class='purchase-btn-text'>イベント<br>作成</span>
