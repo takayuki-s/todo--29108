@@ -12,7 +12,6 @@ a {
 
 .top-content {
   color: white;
-  width: calc(100vw - 15px);
   height: 200px;
   display: flex;
   align-items: center;
@@ -30,7 +29,7 @@ a {
 }
 
 .title-content {
-  width: 70vw;
+  width: 65vw;
   text-shadow:
     1px 0 0 black,
     0 1px 0 black,
@@ -40,21 +39,32 @@ a {
 
 .login-content {
   color: white;
-  width: 30vw;
+  width: 35vw;
   height: 100%;
-  font-size: 20px;
+  font-size: 25px;
+  padding-right: 20px;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
 .user-box {
-  font-size: 25px;
+  position: relative;
 }
 
 .user-nickname, .login, .logout, .sign-up {
+  color: black;
+  font-weight: bold;
+  width: 100vw;
   padding: 10px;
-  background-image: image-url('back3.png');
+  // background-image: image-url('back3.png');
+  text-shadow:
+    1px 0 0 white,
+    0 1px 0 white,
+    -1px 0 0 white,
+    0 -1px 0 white;
+    background: rgba(255,255,255,0.4);
+
 }
 
 .user-nickname:hover, .login:hover, .logout:hover, .sign-up:hover {
@@ -63,8 +73,8 @@ a {
 
 
 .todo-countdown-title {
-  margin: 20px 0;
-  width: 100vw;
+  margin: 20px;
+  width: calc(100vw - 40px);
   height: 50px;
   padding: 10px;
   display: flex;
@@ -75,12 +85,13 @@ a {
 .todo-countdown-title  p {
   font-size: 40px;
   color: black;
-  width: 50vw;
+  width: 75vw;
   background-image: image-url('paper.png') ;
 }
 
 .countdown {
-  width: 100%;
+  width: calc(100vw - 30px);
+  margin: 30px;
   overflow-x: scroll;
 }
 
@@ -88,6 +99,7 @@ a {
   width: 300%;
   height: 150px;
   padding: 10px;
+  margin-left: 10px; 
   display: flex;
 }
 .countdown-zone-red, .countdown-zone-yellow, .countdown-zone-blue {
@@ -123,9 +135,9 @@ body {
 table {
   font-family: 'Courier New', monospace;
   height: calc(100% - 250px);
-  width: calc(100% - 40px);
+  width: calc(100% - 60px);
   padding: 10px;
-  margin: 20px;
+  margin: 30px;
   border-collapse: collapse;
   border: 2px solid #eee;
   text-align: center;
@@ -225,11 +237,13 @@ tfoot {
 
 .list-box {
   display: flex;
-  margin: 50px 20px 50px ;
+  margin: 50px 30px 50px ;
+  width: calc(100vw - 60px);
 }
 
 .plan-list {
-  width: 50vw;
+  width: calc(50% - 20px);
+  margin-right: 20px;
 }
 
 .plan-list h1 {
@@ -237,7 +251,7 @@ tfoot {
 }
 
 .todo-list {
-  width: 50vw;
+  width: calc(50% - 20px);
 }
 
 .list-box h1 {
@@ -381,9 +395,11 @@ tfoot {
 footer {
   line-height: 50px;
   height: 550px;
-  margin-bottom: 50px;
 }
 
+.about-app {
+  margin: 0 30px;
+}
 
 .explain-border {
   height: 500px;
