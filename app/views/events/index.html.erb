@@ -12,12 +12,17 @@
         <% cut_day_num = cut_day.length - 2%>
         <% last_day = cut_day.slice(0, cut_day_num).to_i %>
         <% if last_day <= 3 %>
-          <div class="countdown-zone-red">
+          <div class="countdown-zone-red" id="box_todo_id_<%= event.id %>" >
             <div class="countdown-zone-date">
               <%= "残り #{last_day} 日！"%>
             </div>
             <div class="countdown-zone-title">
               <%= event.title %>
+            </div>
+            <div class="done-box" id="todo_id_<%= event.id %>">
+              <div class="done-zone">
+                Done!
+              </div>
             </div>
           </div>
         <% elsif last_day <= 7 %>
@@ -208,10 +213,10 @@
       </ul>
     </div>
 </footer>
-<div class='purchase-btn'>
-  <span class='purchase-btn-text'>イベント<br>作成</span>
   <a href="events/new">
-    <%= image_tag 'pencil.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+    <div class='purchase-btn'>
+    <span class='purchase-btn-text'><br>イベント作成</span>
+    <%= image_tag 'pencil.png' , size: '185x75' ,class: "purchase-btn-icon" %>
+    </div>
   </a>
-</div>
 

@@ -118,8 +118,8 @@ console.clear();
               title_box.setAttribute('id', 'title_box');
               const div = document.querySelector('td');
               td.appendChild(title_box);
-              if (gon.event.category_id === 2) {
-                title_box.setAttribute("style", "background-color:skyblue;");
+              if (gon.event[i].category_id === 2) {
+                title_box.setAttribute("style", "background-color:#87CEEB;");
               }
               if (gon.event[i].event_time) {
                 const get_time = gon.event[i].event_time;
@@ -141,7 +141,8 @@ console.clear();
               const div = document.querySelector('td');
               td.appendChild(title_box);
               if (gon.event[i].category_id === 2) {
-                title_box.setAttribute("style", "background-color:skyblue;");
+                console.log(gon.event[i].category_id)
+                title_box.setAttribute("style", "background-color:#87CEEB;");
               }
               if (gon.event[i].event_time) {
                 const get_time = gon.event[i].event_time;
@@ -162,7 +163,7 @@ console.clear();
             const div = document.querySelector('td');
             td.appendChild(title_box);
             if (gon.event[i].category_id === 2) {
-              title_box.setAttribute("style", "background-color:skyblue;");
+              title_box.setAttribute("style", "background-color:#87CEEB;");
             }
             if (gon.event[i].event_time) {
               const get_time = gon.event[i].event_time;
