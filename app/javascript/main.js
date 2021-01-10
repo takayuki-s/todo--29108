@@ -118,9 +118,7 @@ console.clear();
               title_box.setAttribute('id', 'title_box');
               const div = document.querySelector('td');
               td.appendChild(title_box);
-              console.log(gon.event[i])
               if (gon.event[i].category_id === 2) {
-                console.log(gon.event[i].category_id)
                 title_box.setAttribute("style", "background-color:#87CEEB;");
               }
               if (gon.event[i].event_time) {
@@ -165,7 +163,6 @@ console.clear();
             const div = document.querySelector('td');
             td.appendChild(title_box);
             if (gon.event[i].category_id === 2) {
-              console.log(gon.event[i].category_id)
               title_box.setAttribute("style", "background-color:#87CEEB;");
             }
             if (gon.event[i].event_time) {

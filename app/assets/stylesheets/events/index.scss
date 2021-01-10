@@ -86,7 +86,7 @@ a {
 
 }
 
-.user-nickname:hover, .login:hover, .logout:hover, .sign-up:hover {
+.user-nickname:hover, .login:hover, .logout:hover, .sign-up:hover, .done-zone:hover {
   background: #DDFFDD;;
 }
 
@@ -141,14 +141,22 @@ a {
 .countdown-zone-title {
   font-size: 18px;
   padding: 5px;
-  background-image: image-url('paper.png') ;
+  background: rgba(255,255,255,0.6);
 }
 
 .countdown-zone-date {
   padding: 5px;
 }
 
-body {
+.done-box {
+  display: flex;
+  justify-content: center;
+}
+
+.done-zone {
+  width: 50%;
+  margin-top: 10px;
+  background-image: image-url('paper.png') ;
 }
 
 table {
