@@ -6,12 +6,18 @@
     </ul>
     <ul class='login-content'>
       <% if user_signed_in? %>
-        <li class="user-box"><%= link_to current_user.nick_name, "#", class: "user-nickname" %></li>
-        <li class="user-box"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"%></li> 
+        <div class="login-now-content">
+          <li class="user-box"><%= link_to current_user.nick_name, "#", class: "user-nickname" %></li>
+          <li class="user-box"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"%></li> 
+        </div>
       <% else %>
-        <li class="user-box"><%= link_to 'ゲスト', users_guest_sign_in_path, method: :post, class: "login"%></li>
-        <li class="user-box"><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-        <li class="user-box"><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+        <div class="guest-content">
+          <li class="user-box"><%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post, class: "login"%></li>
+        </div>
+        <div class="not-login-content">
+          <li class="user-box"><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+          <li class="user-box"><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+        </div>
       <% end %>      
     </ul>
   </div>
