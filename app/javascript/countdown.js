@@ -1,5 +1,4 @@
 window.addEventListener('load', function(){
-  document.cookie;
   const todo_num = document.querySelector('.done-box').id;
   const box_num = "box_" + todo_num;
   console.log(`${todo_num}`)
@@ -13,7 +12,6 @@ window.addEventListener('load', function(){
         if(window.confirm('完了しても良いですか？')) {
           delete_box.remove();
           const m = 60*60*24*14
-          document.cookie = "name=" + box_num; ";max-age=" + m;
         }
       }
     }, false);
