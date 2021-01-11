@@ -2,7 +2,11 @@
 <div class="todo-countdown-title">
   <p>You have to do it!</p>
 </div>
-
+<div class="notice-zone">
+  <p class="notice">
+  <%=  notice %> 
+  </p>
+</div>
 <% d = Date.today%>
 <div class="countdown">
   <div class="todo-countdown">
@@ -21,7 +25,7 @@
             </div>
             <div class="done-box" id="todo_id_<%= event.id %>">
               <div class="done-zone">
-                Done!
+                <%= link_to 'done!', done_event_path(event.id), method: :put %>
               </div>
             </div>
           </div>
@@ -33,6 +37,11 @@
             <div class="countdown-zone-title">
               <%= event.title %>
             </div>
+            <div class="done-box" id="todo_id_<%= event.id %>">
+              <div class="done-zone">
+                <%= link_to 'done!', done_event_path(event.id), method: :put %>
+              </div>
+            </div>
           </div>
         <% elsif last_day <= 14 %>
           <div class="countdown-zone-blue">
@@ -41,6 +50,11 @@
             </div>
             <div class="countdown-zone-title">
               <%= event.title %>
+            </div>
+            <div class="done-box" id="todo_id_<%= event.id %>">
+              <div class="done-zone">
+                <%= link_to 'done!', done_event_path(event.id), method: :put %>
+              </div>
             </div>
           </div>
         <% end %>
@@ -129,7 +143,7 @@
     <h1>todo一覧</h1>
     <ul class="todos">
       <% @events.each do |event| %>
-        <% if event.category_id == 2 && d <= event.event_date %>
+        <% if event.category_id >= 2 && d <= event.event_date %>
           <li class="a-todo">
             <div class="date-title-zone">
               <div class="date-zone">
@@ -188,13 +202,14 @@
           <span class="explain-head">１．アプリ利用について</span><br>
           このアプリの利用にはユーザー登録が必要です。<br>
           <%= link_to 'こちら', new_user_registration_path %>から登録できます。登録済みの方は<%= link_to 'こちら', new_user_session_path %>からログインしてください。<br>
-          ※ページ上部にあるボタンからでも新規登録・ログインできます。
+          ※ページ上部にあるボタンからでも新規登録・ログインできます。<br>
+          （ゲストログインでは登録の必要なく、それぞれの機能をお試し頂けます。）
         </li>
         <li class="explain">
           <span class="explain-head">２．イベント（予定やtodo）作成について</span><br>
           右下の「イベント作成ボタン」から予定やtodoの登録を行ってください。<br>
           登録されたイベント名や時間（設定時）がカレンダーに表示されます。<br>
-          また、カレンダー内に前月や次月の日付がある場合も表示されますが、<br>
+          また、前月や次月の日付欄にも該当イベントがある場合、それぞれ表示されますが、<br>
           年をまたぐ場合（12月〜1月）のみ表示されないのでご注意ください。
         </li>
         <li class="explain">
@@ -208,7 +223,10 @@
           <span class="explain-head">４．「You have to do it!」について</span><br>
           「todo」を作成した場合、期限が近づくとtodoリストが表示されます。<br>
           期限が近いものから表示され、残り日数によって背景が変化します。<br>
-          <span class="red">&nbsp;赤…残り３日以内&nbsp;</span> &emsp; <span class="yellow">&nbsp;黄…残り７日以内&nbsp;</span> &emsp; <span class="blue">&nbsp;青…残り１４日以内&nbsp;</span>
+          <span class="red">&nbsp;赤…残り３日以内&nbsp;</span> &emsp; <span class="yellow">&nbsp;黄…残り７日以内&nbsp;</span> &emsp; <span class="blue">&nbsp;青…残り１４日以内&nbsp;</span><br>
+          リスト内の「Done!」ボタンを押すことで、リストから削除することができますが<br>
+          カレンダーやカレンダー下部のtodo一覧には残るようにしております。<br>
+          完全に削除したい場合は、カレンダー下部のtodo一覧の削除ボタンより消してください。
         </li>
       </ul>
     </div>
