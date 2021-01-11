@@ -1,8 +1,8 @@
 class EventsController < ApplicationController
 before_action :gon_set, only: [:index, :new, :edit]
-before_action :move_to_index, except: [:index, :show]
-before_action :set_event, only: [:show, :edit, :update, :destroy]
-before_action :user_check, only: [:edit, :update, :destroy]
+before_action :move_to_index, except: [:index]
+before_action :set_event, only: [:edit, :update, :destroy, :done]
+before_action :user_check, only: [:edit, :update, :destroy, :done]
 
   def index
   end
@@ -22,7 +22,6 @@ before_action :user_check, only: [:edit, :update, :destroy]
   end
 
   def show
-    @event = Event.find(params[:id])
   end
 
   def edit
@@ -43,6 +42,15 @@ before_action :user_check, only: [:edit, :update, :destroy]
       redirect_to root_path
     end
   end
+
+  def done
+    @event.category_id = 3
+    if @event.save
+      flash[:notice] = "【#{@event.title}】完了！"
+      redirect_to root_path
+    end
+  end
+
 
   private
 
