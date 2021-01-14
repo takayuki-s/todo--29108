@@ -1,14 +1,14 @@
 
 <br>
 
-# マイのスケ~MyScheduleBook~
+# マイのスケ 〜MyScheduleBook〜
 ![logo](https://user-images.githubusercontent.com/69967620/104320269-729d6280-5525-11eb-836f-e7e50cd33bd8.png)
 
 <br>
 <br>
 
 # アプリ概要
-予定とTodoをイベントとして登録し、カレンダーに表示させて管理できるスケジューリングアプリです。
+予定やTodoをイベントとして登録し、カレンダーに表示させて管理できるスケジューリングアプリです。
 
 ![デモ](https://user-images.githubusercontent.com/69967620/104446538-f3b83080-55dd-11eb-8435-8e3a4337cfd0.gif)
 
@@ -37,7 +37,7 @@ https://git.heroku.com/todo--29108.git<br>
 <br>
 <br>
 
-# 注目の機能 ~Todoカウントダウンリスト~
+# 注目の機能 〜Todoカウントダウンリスト〜
 １４日以内のTodoをリストアップして表示する機能です。この機能は、「登録したTodoのやり忘れを防ぐ」など、ユーザーのタスク処理を補助するために実装しています。<br>
 残り日数が少なくなるにつれて、「青」→「黄」→「赤」とリストアップされた項目の背景が変化するので、緊急度が視覚的にも分かりやすくなっています。
 <br>
@@ -72,9 +72,9 @@ https://git.heroku.com/todo--29108.git<br>
 <br>
 
 # ER図
-<img width="465" alt="ER" src="https://user-images.githubusercontent.com/69967620/104567988-ced1c500-5692-11eb-8624-55bbd9d16bbb.png">
+<img width="388" alt="ER図" src="https://user-images.githubusercontent.com/69967620/104571095-0ee67700-5696-11eb-8a85-c97652cf3b77.png">
 
-※category_idは、１：「予定」、２：「Todo」、３：「完了済Todo」で管理しています。
+※category_idで「予定」「Todo」「完了済Todo」を管理しています。
 
 <br>
 <br>
