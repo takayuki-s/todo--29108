@@ -20,9 +20,10 @@
 アプリ URL<br>
 https://todo--29108.herokuapp.com/<br>
 
-Git URL<br>
-https://git.heroku.com/todo--29108.git<br>
-
+Git clone コマンド<br>
+```
+git clone https://git.heroku.com/todo--29108.git<br>
+```
 <br>
 <br>
 
