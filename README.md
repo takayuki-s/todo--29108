@@ -1,24 +1,101 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<br>
 
-Things you may want to cover:
+# マイのスケ~MyScheduleBook~
+![logo](https://user-images.githubusercontent.com/69967620/104320269-729d6280-5525-11eb-836f-e7e50cd33bd8.png)
 
-* Ruby version
+<br>
+<br>
 
-* System dependencies
+# アプリ概要
+予定とTodoをイベントとして登録し、カレンダーに表示させて管理できるスケジューリングアプリです。
 
-* Configuration
+![デモ](https://user-images.githubusercontent.com/69967620/104446538-f3b83080-55dd-11eb-8435-8e3a4337cfd0.gif)
 
-* Database creation
+<br>
+<br>
 
-* Database initialization
+# URL
 
-* How to run the test suite
+アプリ URL<br>
+https://todo--29108.herokuapp.com/<br>
 
-* Services (job queues, cache servers, search engines, etc.)
+Git URL<br>
+https://git.heroku.com/todo--29108.git<br>
 
-* Deployment instructions
+<br>
+<br>
 
-* ...
+# 利用方法
+1. アプリにログイン（または新規登録）します。ゲストユーザーとして機能のお試しができます。（ゲストログインボタンからログインできます。）
+2. 右下のイベント作成ボタンより、イベントの作成を行ってください。登録したイベントがカレンダーや一覧に表示されます。（「予定」として登録するとピンク、「Todo」として登録すると水色で表示されます。時間を設定した場合、カレンダーに時間とタイトルが表示されます。）
+
+<img width="377" alt="プレビュー" src="https://user-images.githubusercontent.com/69967620/104443767-2eb86500-55da-11eb-9422-427b9f95c022.png">
+
+3. 現在日より未来のイベントは「予定一覧」「Todo一覧」で日付の近い順に表示されます。（「詳細」「編集」「削除」機能も実装されています。）
+
+<br>
+<br>
+
+# 注目の機能 ~Todoカウントダウンリスト~
+１４日以内のTodoをリストアップして表示する機能です。この機能は、「登録したTodoのやり忘れを防ぐ」など、ユーザーのタスク処理を補助するために実装しています。<br>
+残り日数が少なくなるにつれて、「青」→「黄」→「赤」とリストアップされた項目の背景が変化するので、緊急度が視覚的にも分かりやすくなっています。
+<br>
+また、完了したTodoは「done!」ボタンを押すことで、カウントダウンリストから削除することができます。（イベントとしてのデータは残っているので、カレンダーや一覧には引き続き表示されます。完全に削除したい場合は、Todo一覧の「削除」ボタンより削除できます。）
+
+<br>
+<img width="382" alt="カウントダウン" src="https://user-images.githubusercontent.com/69967620/104560897-e789ad00-5689-11eb-82e3-bfd5c9c1ff32.png">
+
+
+<br>
+<br>
+<br>
+
+# このアプリで目指した課題解決・ターゲット
+どんな人の、どんな課題解決を目指したのかを以下で紹介します。
+
+## 課題解決
+* Todo管理アプリは他にも様々あるが、カレンダーと併用する場合はカレンダーの同期などが必要になる。→カレンダー同期の一手間や煩わしさを解消して、手軽に扱えるアプリを作りたい。
+* タスク処理の１つとして、「しなければならないこと」を付箋に書いてデスクに貼るといった方法は昔からあるが、タスクが終わった付箋は捨ててしまうことが多く、後で自分で振り返ることができない。→「タスク処理をする（付箋を剥がして捨てる）」という操作を残しつつ、しっかりとデータとして残しておけるような機能にする。
+
+## ターゲット
+* 会議やタスク処理をスケジュール帳や卓上カレンダーなどで管理していて、厳密な時間設定が必要ない人
+* 学生（バイトなどは「予定」として、レポートなどは「Todo」として管理できるので便利に使えます）
+
+<br>
+<br>
+
+# 洗い出した要件
+[こちら](https://docs.google.com/spreadsheets/d/1nqpts8pgAEv0smf17oGdOf5N8zrBKNcyoB-NywR_WBo/edit?usp=sharing)のスプレッドシートをご覧ください。
+
+<br>
+<br>
+
+# ER図
+<img width="465" alt="ER" src="https://user-images.githubusercontent.com/69967620/104567988-ced1c500-5692-11eb-8624-55bbd9d16bbb.png">
+
+※category_idは、１：「予定」、２：「Todo」、３：「完了済Todo」で管理しています。
+
+<br>
+<br>
+
+# 今後実装したい機能
+今後実装したい機能としては２つあります。
+
+1. 過去に登録したイベントを検索したり、編集・削除したりできる機能
+2. 「done!」ボタンを押すと、付箋を剥がすようなアニメーションが起きる機能 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
