@@ -94,6 +94,14 @@ git clone https://git.heroku.com/todo--29108.git
 <br>
 <br>
 
+# 開発環境
+* 開発言語…Ruby on Rails、JavaScript、HTML、CSS
+* Railsバージョン…6.0.0
+
+<br>
+<br>
+
+
 # 今後実装したい機能
 今後実装したい機能としては２つあります。
 
