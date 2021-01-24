@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: todo__29108_production
-  username: todo__29108
-  password: <%= ENV['TODO__29108_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
